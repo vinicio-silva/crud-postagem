@@ -1,8 +1,6 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
-
-
 const PostDeleteModal = ({ onClose, onConfirm, postId }) => {
 
     const handleDelete = async () => {
@@ -18,22 +16,39 @@ const PostDeleteModal = ({ onClose, onConfirm, postId }) => {
     };
 
     return (
-        <div className="modal show"style={{  width: '100%', height: '100%', zIndex: 1000, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <Modal.Dialog style={{ zIndex: 'inherit', width: '50%', minWidth: '300px', maxWidth: '600px' }}>
-            <Modal.Header closeButton>
-                <Modal.Title>Excluir Postagem</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <p>Atenção! Ao excluir esta postagem os comentários também serão excluídos.</p>
-            </Modal.Body>
-            <Modal.Footer>
-                <Button variant="secondary" onClick={onClose}>
-                Cancelar
-                </Button>
-                <Button variant="danger" onClick={handleDelete}>
-                Excluir
-                </Button>
-            </Modal.Footer>
+        <div 
+            className="modal show" 
+            style={{ 
+                width: '100%', 
+                height: '100%', 
+                zIndex: 1000, 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center' 
+            }}
+        >
+            <Modal.Dialog 
+                style={{ 
+                    zIndex: 'inherit', 
+                    width: '50%', 
+                    minWidth: '300px', 
+                    maxWidth: '600px' 
+                }}
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title>Excluir Postagem</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p>Atenção! Ao excluir esta postagem os comentários também serão excluídos.</p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={onClose}>
+                        Cancelar
+                    </Button>
+                    <Button variant="danger" onClick={handleDelete}>
+                        Excluir
+                    </Button>
+                </Modal.Footer>
             </Modal.Dialog>
         </div>
     );
